@@ -6,7 +6,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         double subtotal = pedirDouble(scanner, "Subtotal: ");
-        double total = subtotal;
+        double IVA = 0.16;
+        double total = subtotal + (subtotal * IVA);
+
 
         System.out.printf("Total a pagar: %.2f%n", total);
     }
