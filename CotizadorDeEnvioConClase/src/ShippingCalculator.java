@@ -1,21 +1,21 @@
 public class ShippingCalculator {
-    public double calcularSubtotal(double pesoKg, int distanciaKm, int tipoServicio, boolean zonaRemota) {
+    public double calcularSubtotal(double pesoKg, int distanciaKm, int tipoS, boolean zonaR) {
         double subtotal = 0;
-        if (tipoServicio == 1) {
-            subtotal = subtotal + 50;
+        if (tipoS == 1) {
+            subtotal += 50;
         } else {
-            subtotal = subtotal + 90;
+            subtotal += 90;
         }
-        subtotal = subtotal + (pesoKg * 12);
+        subtotal += pesoKg * 12;
         if (distanciaKm <= 50) {
-            subtotal = subtotal + 20;
+            subtotal += 20;
         } else if (distanciaKm <= 200) {
-            subtotal = subtotal + 60;
+            subtotal += 60;
         } else {
-            subtotal = subtotal + 120;
+            subtotal += 120;
         }
-        if (zonaRemota == true) {
-            subtotal = subtotal + (subtotal * 0.10);
+        if (zonaR) {
+            subtotal += subtotal * 0.10;
         }
         return subtotal;
     }
