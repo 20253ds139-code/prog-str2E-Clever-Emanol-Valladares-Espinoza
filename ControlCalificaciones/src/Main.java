@@ -44,12 +44,9 @@ public class Main {
         return sc.nextBoolean();
     }
     public static void imprimirReporte(String nombre,
-                                       double p1, double p2, double p3,
-                                       double promedio,
-                                       int asistencia,
-                                       boolean entregoProyecto,
-                                       double finalCal,
-                                       String estado) {
+                                       double p1, double p2, double p3, double promedio,
+                                       int asistencia, boolean entregoProyecto,
+                                       double finalCal, String estado) {
         System.out.println("alumno: " + nombre);
         System.out.println("parciales: " + p1 + ", " + p2 + ", " + p3);
         System.out.println("promedio: " + promedio);
