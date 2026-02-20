@@ -1,4 +1,15 @@
-package PACKAGE_NAME;
+public class Perro extends Animal {
 
-public class Perro {
+    public Perro(String nombre) {
+        super(nombre);
+    }
+
+    @Override
+    public void hacerSonido() {
+        System.out.println(getNombre() + " esta ladrando");
+    }
+
+    public void marcarTerritorio() {
+        System.out.println(getNombre() + " esta levantando la patita");
+    }
 }
