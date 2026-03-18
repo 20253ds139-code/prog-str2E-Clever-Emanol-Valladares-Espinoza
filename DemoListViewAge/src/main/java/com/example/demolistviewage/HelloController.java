@@ -6,6 +6,8 @@ import javafx.scene.control.TextField;
 
 public class HelloController {
 
+    private UsuarioService usuarioService = new UsuarioService();
+
     @FXML
     private TextField txtNombre;
 
@@ -37,13 +39,32 @@ public class HelloController {
 
             Usuario usuario = new Usuario(nombre, edad);
 
-            listUsuarios.getItems().add(usuario);
+            usuarioService.agregarUsuario(usuario);
+
+            listUsuarios.setItems(usuarioService.obtenerUsuarios());
+
             txtNombre.clear();
             txtEdad.clear();
 
         } catch (NumberFormatException e) {
 
             System.out.println("La edad debe ser un número entero");
+
+        }
+    }
+
+    @FXML
+    public void eliminarUsuario() {
+
+        Usuario usuarioSeleccionado = listUsuarios.getSelectionModel().getSelectedItem();
+
+        if (usuarioSeleccionado != null) {
+
+            usuarioService.eliminarUsuario(usuarioSeleccionado);
+
+        } else {
+
+            System.out.println("Selecciona un usuario para eliminar");
 
         }
     }

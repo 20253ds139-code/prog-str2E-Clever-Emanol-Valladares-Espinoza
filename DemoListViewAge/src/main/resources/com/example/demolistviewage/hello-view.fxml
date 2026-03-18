@@ -19,6 +19,8 @@
 
     <Button text="Agregar Usuario" onAction="#agregarUsuario"/>
 
+    <Button text="Eliminar Usuario" onAction="#eliminarUsuario"/>
+
     <ListView fx:id="listUsuarios"/>
 
 </VBox>
